@@ -35,77 +35,21 @@
     }
 
     /* ── CUSTOM CURSOR ── */
-    .cursor {
-      width: 20px; height: 20px;
-      border: 2px solid var(--green);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transition: transform 0.1s;
-      mix-blend-mode: screen;
-    }
-    .cursor-dot {
-      width: 4px; height: 4px;
-      background: var(--green);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-    }
+    .cursor { width: 20px; height: 20px; border: 2px solid var(--green); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s; mix-blend-mode: screen; }
+    .cursor-dot { width: 4px; height: 4px; background: var(--green); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; }
 
     /* ── SCANLINE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 255, 65, 0.015) 2px,
-        rgba(0, 255, 65, 0.015) 4px
-      );
-      pointer-events: none;
-      z-index: 1000;
-    }
+    body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 65, 0.015) 2px, rgba(0, 255, 65, 0.015) 4px); pointer-events: none; z-index: 1000; }
 
     /* ── MATRIX CANVAS ── */
-    #matrix-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      opacity: 0.04;
-      z-index: 0;
-      pointer-events: none;
-    }
+    #matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.04; z-index: 0; pointer-events: none; }
 
     /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-      padding: 1rem 4vw;
-      background: rgba(2, 12, 2, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--green3);
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 900;
-      color: var(--green);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 1rem 4vw; background: rgba(2, 12, 2, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--green3); display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 900; color: var(--green); text-decoration: none; letter-spacing: 0.1em; }
     .nav-logo span { color: var(--dim); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--dim);
-      text-decoration: none;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: var(--dim); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; transition: color 0.2s; }
     .nav-links a::before { content: './'; color: var(--green3); }
     .nav-links a:hover { color: var(--green); text-shadow: 0 0 8px var(--green); }
 
@@ -113,26 +57,9 @@
     .page { position: relative; z-index: 1; }
 
     /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 6vw 4rem;
-      position: relative;
-    }
-    .hero-terminal {
-      background: var(--bg2);
-      border: 1px solid var(--green3);
-      border-radius: 6px;
-      max-width: 780px;
-      box-shadow: 0 0 40px rgba(0,255,65,0.08), inset 0 0 40px rgba(0,0,0,0.5);
-      overflow: hidden;
-    }
-    .terminal-bar {
-      background: #0a1a0a;
-      padding: 0.6rem 1rem;
-      display: flex; align-items: center; gap: 0.5rem;
-      border-bottom: 1px solid var(--green3);
-    }
+    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 6vw 4rem; position: relative; }
+    .hero-terminal { background: var(--bg2); border: 1px solid var(--green3); border-radius: 6px; max-width: 780px; box-shadow: 0 0 40px rgba(0,255,65,0.08), inset 0 0 40px rgba(0,0,0,0.5); overflow: hidden; }
+    .terminal-bar { background: #0a1a0a; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--green3); }
     .t-btn { width: 10px; height: 10px; border-radius: 50%; }
     .t-btn.red { background: #ff5f57; }
     .t-btn.yellow { background: #ffbd2e; }
@@ -144,100 +71,34 @@
     .t-cmd { color: var(--green); }
     .t-output { color: var(--text); padding-left: 1rem; }
     .t-output.dim { color: var(--dim); }
-    .t-name {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 900;
-      color: var(--green);
-      text-shadow: 0 0 20px rgba(0,255,65,0.5);
-      letter-spacing: 0.05em;
-      line-height: 1.1;
-      margin: 0.5rem 0 0.3rem;
-    }
+    .t-name { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--green); text-shadow: 0 0 20px rgba(0,255,65,0.5); letter-spacing: 0.05em; line-height: 1.1; margin: 0.5rem 0 0.3rem; }
     .t-role { color: var(--dim); font-size: 0.95rem; margin-bottom: 1.2rem; }
-    .blink {
-      display: inline-block;
-      width: 10px; height: 1.1em;
-      background: var(--green);
-      vertical-align: text-bottom;
-      animation: blink 1s step-end infinite;
-    }
+    .blink { display: inline-block; width: 10px; height: 1.1em; background: var(--green); vertical-align: text-bottom; animation: blink 1s step-end infinite; }
     @keyframes blink { 50% { opacity: 0; } }
     .hero-cta { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
-    .btn {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      padding: 0.65rem 1.6rem;
-      border-radius: 3px;
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      transition: all 0.2s;
-      cursor: none;
-    }
-    .btn-primary {
-      background: transparent;
-      color: var(--green);
-      border: 1px solid var(--green);
-      box-shadow: 0 0 12px rgba(0,255,65,0.15), inset 0 0 12px rgba(0,255,65,0.05);
-    }
-    .btn-primary:hover {
-      background: rgba(0,255,65,0.1);
-      box-shadow: 0 0 24px rgba(0,255,65,0.3), inset 0 0 20px rgba(0,255,65,0.1);
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--dim);
-      border: 1px solid var(--muted);
-    }
+    .btn { font-family: var(--font-mono); font-size: 0.82rem; padding: 0.65rem 1.6rem; border-radius: 3px; text-decoration: none; letter-spacing: 0.06em; transition: all 0.2s; cursor: none; }
+    .btn-primary { background: transparent; color: var(--green); border: 1px solid var(--green); box-shadow: 0 0 12px rgba(0,255,65,0.15), inset 0 0 12px rgba(0,255,65,0.05); }
+    .btn-primary:hover { background: rgba(0,255,65,0.1); box-shadow: 0 0 24px rgba(0,255,65,0.3), inset 0 0 20px rgba(0,255,65,0.1); }
+    .btn-outline { background: transparent; color: var(--dim); border: 1px solid var(--muted); }
     .btn-outline:hover { color: var(--green); border-color: var(--dim); }
 
     /* ── SECTION BASE ── */
     section { padding: 5rem 6vw; position: relative; z-index: 1; }
     .section-header { margin-bottom: 2.5rem; }
-    .section-tag {
-      font-size: 0.72rem;
-      color: var(--dim);
-      letter-spacing: 0.12em;
-      margin-bottom: 0.4rem;
-    }
+    .section-tag { font-size: 0.72rem; color: var(--dim); letter-spacing: 0.12em; margin-bottom: 0.4rem; }
     .section-tag::before { content: '# '; color: var(--green3); }
-    h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.06em;
-      text-shadow: 0 0 15px rgba(0,255,65,0.3);
-    }
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, var(--green3), transparent);
-      margin: 0 6vw;
-      position: relative; z-index: 1;
-    }
+    h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-shadow: 0 0 15px rgba(0,255,65,0.3); }
+    .divider { height: 1px; background: linear-gradient(90deg, var(--green3), transparent); margin: 0 6vw; position: relative; z-index: 1; }
 
     /* ── ABOUT ── */
     #about { background: var(--bg2); }
     .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: start; }
-    .about-terminal {
-      background: var(--bg);
-      border: 1px solid var(--green3);
-      border-radius: 4px;
-      padding: 1.5rem;
-      font-size: 0.88rem;
-      line-height: 1.8;
-    }
+    .about-terminal { background: var(--bg); border: 1px solid var(--green3); border-radius: 4px; padding: 1.5rem; font-size: 0.88rem; line-height: 1.8; }
     .about-terminal p { color: var(--text); margin-bottom: 0.8rem; }
     .about-terminal p:last-child { margin-bottom: 0; }
     .about-terminal .comment { color: var(--muted); font-style: italic; }
     .stat-grid { display: flex; flex-direction: column; gap: 1rem; }
-    .stat-box {
-      border: 1px solid var(--green3);
-      border-radius: 4px;
-      padding: 1rem 1.2rem;
-      background: var(--bg);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
+    .stat-box { border: 1px solid var(--green3); border-radius: 4px; padding: 1rem 1.2rem; background: var(--bg); transition: border-color 0.2s, box-shadow 0.2s; }
     .stat-box:hover { border-color: var(--green2); box-shadow: 0 0 12px rgba(0,255,65,0.1); }
     .stat-key { font-size: 0.7rem; color: var(--dim); letter-spacing: 0.1em; margin-bottom: 0.3rem; }
     .stat-key::before { content: '> '; }
@@ -245,23 +106,8 @@
 
     /* ── SKILLS ── */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
-    .skill-card {
-      border: 1px solid var(--green3);
-      border-radius: 4px;
-      padding: 1.2rem 1.4rem;
-      background: var(--bg2);
-      transition: all 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .skill-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px; height: 100%;
-      background: var(--green3);
-      transition: background 0.2s;
-    }
+    .skill-card { border: 1px solid var(--green3); border-radius: 4px; padding: 1.2rem 1.4rem; background: var(--bg2); transition: all 0.2s; position: relative; overflow: hidden; }
+    .skill-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--green3); transition: background 0.2s; }
     .skill-card:hover { border-color: var(--green2); box-shadow: 0 0 16px rgba(0,255,65,0.1); }
     .skill-card:hover::before { background: var(--green); }
     .skill-icon { font-size: 1.3rem; margin-bottom: 0.4rem; }
@@ -273,25 +119,8 @@
     /* ── CERTIFICATIONS ── */
     #certifications { background: var(--bg2); }
     .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
-    .cert-card {
-      border: 1px solid var(--green3);
-      border-radius: 4px;
-      padding: 1.5rem;
-      background: var(--bg);
-      transition: all 0.2s;
-      position: relative;
-    }
-    .cert-card::after {
-      content: '[VERIFIED]';
-      position: absolute;
-      top: 1rem; right: 1rem;
-      font-size: 0.6rem;
-      color: var(--green3);
-      letter-spacing: 0.08em;
-      border: 1px solid var(--green3);
-      padding: 0.15rem 0.4rem;
-      border-radius: 2px;
-    }
+    .cert-card { border: 1px solid var(--green3); border-radius: 4px; padding: 1.5rem; background: var(--bg); transition: all 0.2s; position: relative; }
+    .cert-card::after { content: '[VERIFIED]'; position: absolute; top: 1rem; right: 1rem; font-size: 0.6rem; color: var(--green3); letter-spacing: 0.08em; border: 1px solid var(--green3); padding: 0.15rem 0.4rem; border-radius: 2px; }
     .cert-card:hover { border-color: var(--green2); box-shadow: 0 0 20px rgba(0,255,65,0.1); }
     .cert-card:hover::after { color: var(--green2); border-color: var(--green2); }
     .cert-issuer { font-size: 0.68rem; color: var(--dim); letter-spacing: 0.1em; margin-bottom: 0.6rem; }
@@ -299,103 +128,35 @@
 
     /* ── PROJECTS ── */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
-    .project-card {
-      border: 1px solid var(--green3);
-      border-radius: 4px;
-      background: var(--bg2);
-      transition: all 0.2s;
-      overflow: hidden;
-      display: flex; flex-direction: column;
-    }
+    .project-card { border: 1px solid var(--green3); border-radius: 4px; background: var(--bg2); transition: all 0.2s; overflow: hidden; display: flex; flex-direction: column; }
     .project-card:hover { border-color: var(--green2); box-shadow: 0 0 24px rgba(0,255,65,0.12); }
-    .project-header {
-      padding: 1.5rem 1.5rem 1rem;
-      border-bottom: 1px solid var(--green3);
-      display: flex; justify-content: space-between; align-items: flex-start;
-    }
+    .project-header { padding: 1.5rem 1.5rem 1rem; border-bottom: 1px solid var(--green3); display: flex; justify-content: space-between; align-items: flex-start; }
     .project-id { font-size: 0.68rem; color: var(--green3); letter-spacing: 0.12em; }
-    .project-status {
-      font-size: 0.62rem;
-      color: var(--green2);
-      border: 1px solid var(--green3);
-      padding: 0.1rem 0.4rem;
-      border-radius: 2px;
-      letter-spacing: 0.06em;
-    }
+    .project-status { font-size: 0.62rem; color: var(--green2); border: 1px solid var(--green3); padding: 0.1rem 0.4rem; border-radius: 2px; letter-spacing: 0.06em; }
     .project-body { padding: 1.2rem 1.5rem; flex: 1; }
     .project-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 0.6rem; letter-spacing: 0.04em; }
     .project-desc { color: var(--text); font-size: 0.85rem; line-height: 1.6; font-family: var(--font-body); font-weight: 300; }
-    .project-footer {
-      padding: 1rem 1.5rem;
-      border-top: 1px solid var(--green3);
-      display: flex; justify-content: space-between; align-items: center;
-    }
+    .project-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--green3); display: flex; justify-content: space-between; align-items: center; }
     .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .tag {
-      font-size: 0.65rem;
-      padding: 0.15rem 0.5rem;
-      border: 1px solid var(--green3);
-      border-radius: 2px;
-      color: var(--dim);
-      letter-spacing: 0.05em;
-    }
+    .tag { font-size: 0.65rem; padding: 0.15rem 0.5rem; border: 1px solid var(--green3); border-radius: 2px; color: var(--dim); letter-spacing: 0.05em; }
     .project-links { display: flex; gap: 1rem; }
-    .project-links a {
-      font-size: 0.75rem;
-      color: var(--green);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: text-shadow 0.2s;
-    }
+    .project-links a { font-size: 0.75rem; color: var(--green); text-decoration: none; letter-spacing: 0.04em; transition: text-shadow 0.2s; }
     .project-links a:hover { text-shadow: 0 0 8px var(--green); }
     .project-links a.sec { color: var(--dim); }
 
     /* ── CONTACT ── */
     #contact { text-align: center; }
-    .contact-terminal {
-      display: inline-block;
-      text-align: left;
-      background: var(--bg2);
-      border: 1px solid var(--green3);
-      border-radius: 6px;
-      padding: 2rem 3rem;
-      max-width: 600px;
-      width: 100%;
-      box-shadow: 0 0 40px rgba(0,255,65,0.06);
-    }
-    .contact-title {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--green);
-      text-shadow: 0 0 15px rgba(0,255,65,0.4);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.06em;
-    }
+    .contact-terminal { display: inline-block; text-align: left; background: var(--bg2); border: 1px solid var(--green3); border-radius: 6px; padding: 2rem 3rem; max-width: 600px; width: 100%; box-shadow: 0 0 40px rgba(0,255,65,0.06); }
+    .contact-title { font-family: var(--font-display); font-size: 1.5rem; color: var(--green); text-shadow: 0 0 15px rgba(0,255,65,0.4); margin-bottom: 0.5rem; letter-spacing: 0.06em; }
     .contact-sub { color: var(--dim); font-size: 0.82rem; margin-bottom: 1.8rem; }
     .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
-    .contact-link {
-      display: flex; align-items: center; gap: 1rem;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.88rem;
-      padding: 0.7rem 1rem;
-      border: 1px solid var(--green3);
-      border-radius: 3px;
-      transition: all 0.2s;
-      background: var(--bg);
-    }
+    .contact-link { display: flex; align-items: center; gap: 1rem; color: var(--text); text-decoration: none; font-size: 0.88rem; padding: 0.7rem 1rem; border: 1px solid var(--green3); border-radius: 3px; transition: all 0.2s; background: var(--bg); }
     .contact-link:hover { border-color: var(--green); color: var(--green); box-shadow: 0 0 12px rgba(0,255,65,0.15); }
     .contact-link .link-icon { font-size: 1rem; width: 1.5rem; text-align: center; }
     .contact-link .link-label { color: var(--dim); font-size: 0.7rem; letter-spacing: 0.08em; margin-left: auto; }
 
     /* ── FOOTER ── */
-    footer {
-      position: relative; z-index: 1;
-      padding: 1.5rem 6vw;
-      border-top: 1px solid var(--green3);
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 0.5rem;
-    }
+    footer { position: relative; z-index: 1; padding: 1.5rem 6vw; border-top: 1px solid var(--green3); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
     footer p { font-size: 0.72rem; color: var(--muted); }
     footer a { color: var(--dim); text-decoration: none; }
     footer a:hover { color: var(--green); }
@@ -403,11 +164,9 @@
     .status-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
 
-    /* ── GLOW ON SCROLL ── */
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       .about-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -417,14 +176,10 @@
 </head>
 <body>
 
-  <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
-
-  <!-- MATRIX BACKGROUND -->
   <canvas id="matrix-bg"></canvas>
 
-  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">ATHARV<span>.GHADI</span></a>
     <ul class="nav-links">
@@ -438,7 +193,6 @@
 
   <div class="page">
 
-    <!-- HERO -->
     <section id="hero">
       <div class="hero-terminal">
         <div class="terminal-bar">
@@ -466,7 +220,6 @@
 
     <div class="divider"></div>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="section-header fade-in">
         <div class="section-tag">SECTION 01</div>
@@ -477,7 +230,7 @@
           <p><span class="comment">/* whoami */</span></p>
           <p>Hi! I'm Atharv, a BSc-IT student from Mumbai with a deep passion for cybersecurity and digital forensics. I love analyzing security incidents and understanding how systems can be protected from real-world threats.</p>
           <p>I've completed job simulations with Deloitte Australia and Tata, and hold certifications in Cybersecurity and Networking Basics from Cisco — building a solid foundation in incident response and risk assessment.</p>
-          <p>I believe in learning by doing — whether it's a hackathon, a job simulation, or diving deep into a new security concept. Always curious. Always building. Always hacking (ethically 😄).</p>
+          <p>Currently grinding through TryHackMe's Pre Security path and loving every bit of it. Always curious. Always building. Always hacking (ethically 😄).</p>
         </div>
         <div class="stat-grid">
           <div class="stat-box">
@@ -489,12 +242,12 @@
             <div class="stat-val">Pursuing BSc-IT</div>
           </div>
           <div class="stat-box">
-            <div class="stat-key">focus</div>
-            <div class="stat-val">Cybersecurity · Digital Forensics</div>
+            <div class="stat-key">currently learning</div>
+            <div class="stat-val">TryHackMe · Pre Security Path 🔐</div>
           </div>
           <div class="stat-box">
             <div class="stat-key">interests</div>
-            <div class="stat-val">Ethical Hacking · Incident Response · CTF</div>
+            <div class="stat-val">Ethical Hacking · Digital Forensics · CTF</div>
           </div>
         </div>
       </div>
@@ -502,95 +255,40 @@
 
     <div class="divider"></div>
 
-    <!-- SKILLS -->
     <section id="skills">
       <div class="section-header fade-in">
         <div class="section-tag">SECTION 02</div>
         <h2>SKILLS.json</h2>
       </div>
       <div class="skills-grid fade-in">
-        <div class="skill-card">
-          <div class="skill-icon">🔐</div>
-          <div class="skill-name">Cybersecurity</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" style="width:40%"></div></div>
-          <div class="skill-level">Beginner · Learning</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🔍</div>
-          <div class="skill-name">Digital Forensics</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" style="width:35%"></div></div>
-          <div class="skill-level">Beginner · Exploring</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🌐</div>
-          <div class="skill-name">Networking Basics</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" style="width:45%"></div></div>
-          <div class="skill-level">Beginner · Learning</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🚨</div>
-          <div class="skill-name">Incident Response</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" style="width:38%"></div></div>
-          <div class="skill-level">Beginner · Learning</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">⚠️</div>
-          <div class="skill-name">Risk Assessment</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" style="width:35%"></div></div>
-          <div class="skill-level">Beginner · Learning</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">⚙️</div>
-          <div class="skill-name">Git & GitHub</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" style="width:60%"></div></div>
-          <div class="skill-level">Comfortable</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🌍</div>
-          <div class="skill-name">HTML & CSS</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" style="width:30%"></div></div>
-          <div class="skill-level">Beginner · Learning</div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">💻</div>
-          <div class="skill-name">VS Code</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div>
-          <div class="skill-level">Daily Driver</div>
-        </div>
+        <div class="skill-card"><div class="skill-icon">🔐</div><div class="skill-name">Cybersecurity</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:40%"></div></div><div class="skill-level">Beginner · Learning</div></div>
+        <div class="skill-card"><div class="skill-icon">🔍</div><div class="skill-name">Digital Forensics</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:35%"></div></div><div class="skill-level">Beginner · Exploring</div></div>
+        <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name">Networking Basics</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:45%"></div></div><div class="skill-level">Beginner · Learning</div></div>
+        <div class="skill-card"><div class="skill-icon">🚨</div><div class="skill-name">Incident Response</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:38%"></div></div><div class="skill-level">Beginner · Learning</div></div>
+        <div class="skill-card"><div class="skill-icon">⚠️</div><div class="skill-name">Risk Assessment</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:35%"></div></div><div class="skill-level">Beginner · Learning</div></div>
+        <div class="skill-card"><div class="skill-icon">⚙️</div><div class="skill-name">Git & GitHub</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:60%"></div></div><div class="skill-level">Comfortable</div></div>
+        <div class="skill-card"><div class="skill-icon">🌍</div><div class="skill-name">HTML & CSS</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:30%"></div></div><div class="skill-level">Beginner · Learning</div></div>
+        <div class="skill-card"><div class="skill-icon">💻</div><div class="skill-name">VS Code</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div><div class="skill-level">Daily Driver</div></div>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- CERTIFICATIONS -->
     <section id="certifications">
       <div class="section-header fade-in">
         <div class="section-tag">SECTION 03</div>
         <h2>CERTIFICATIONS.log</h2>
       </div>
       <div class="certs-grid fade-in">
-        <div class="cert-card">
-          <div class="cert-issuer">🏅 CISCO</div>
-          <div class="cert-name">Introduction to Cybersecurity</div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-issuer">🏅 CISCO</div>
-          <div class="cert-name">Networking Basics</div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-issuer">🏢 DELOITTE AUSTRALIA</div>
-          <div class="cert-name">Cyber Job Simulation</div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-issuer">🏢 TATA</div>
-          <div class="cert-name">Cybersecurity Analyst Job Simulation</div>
-        </div>
+        <div class="cert-card"><div class="cert-issuer">🏅 CISCO</div><div class="cert-name">Introduction to Cybersecurity</div></div>
+        <div class="cert-card"><div class="cert-issuer">🏅 CISCO</div><div class="cert-name">Networking Basics</div></div>
+        <div class="cert-card"><div class="cert-issuer">🏢 DELOITTE AUSTRALIA</div><div class="cert-name">Cyber Job Simulation</div></div>
+        <div class="cert-card"><div class="cert-issuer">🏢 TATA</div><div class="cert-name">Cybersecurity Analyst Job Simulation</div></div>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- PROJECTS -->
     <section id="projects">
       <div class="section-header fade-in">
         <div class="section-tag">SECTION 04</div>
@@ -598,75 +296,64 @@
       </div>
       <div class="projects-grid fade-in">
         <div class="project-card">
-          <div class="project-header">
-            <div class="project-id">PRJ-001</div>
-            <div class="project-status">LIVE</div>
-          </div>
+          <div class="project-header"><div class="project-id">PRJ-001</div><div class="project-status">LIVE</div></div>
           <div class="project-body">
             <div class="project-title">HACKATHON_PROJECT</div>
-            <p class="project-desc">A collaborative project built with my team (Straw-Hats-0745) during a hackathon. Deployed live on GitHub Pages. <!-- Update: describe what it does! --></p>
+            <p class="project-desc">A collaborative project built with my team (Straw-Hats-0745) during a hackathon. Deployed live on GitHub Pages.</p>
           </div>
           <div class="project-footer">
-            <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">GitHub Pages</span>
-            </div>
-            <div class="project-links">
-              <a href="https://straw-hats-0745.github.io/Hackathon-Project/frontend/" target="_blank">DEMO ↗</a>
-              <a href="https://github.com/Straw-Hats-0745/Hackathon-Project" target="_blank" class="sec">SRC →</a>
-            </div>
+            <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GitHub Pages</span></div>
+            <div class="project-links"><a href="https://straw-hats-0745.github.io/Hackathon-Project/frontend/" target="_blank">DEMO ↗</a><a href="https://github.com/Straw-Hats-0745/Hackathon-Project" target="_blank" class="sec">SRC →</a></div>
           </div>
         </div>
-        <!-- DUPLICATE PROJECT CARD ABOVE TO ADD MORE -->
+        <div class="project-card">
+          <div class="project-header"><div class="project-id">PRJ-002</div><div class="project-status">ACTIVE</div></div>
+          <div class="project-body">
+            <div class="project-title">CYBERSECURITY_NOTES</div>
+            <p class="project-desc">Personal notes from my TryHackMe learning journey. Documenting everything room by room — updated regularly.</p>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags"><span class="tag">TryHackMe</span><span class="tag">Networking</span><span class="tag">Forensics</span></div>
+            <div class="project-links"><a href="https://github.com/Atharv07-Luffy/Cybersecurity-Notes" target="_blank">REPO ↗</a></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="contact-terminal fade-in">
         <div class="contact-title">PING_ME</div>
         <div class="contact-sub">> available for collabs, CTFs, and cybersecurity discussions</div>
         <div class="contact-links">
           <a href="mailto:atharvghadi1107@gmail.com" class="contact-link">
-            <span class="link-icon">📧</span>
-            atharvghadi1107@gmail.com
-            <span class="link-label">EMAIL</span>
+            <span class="link-icon">📧</span>atharvghadi1107@gmail.com<span class="link-label">EMAIL</span>
           </a>
           <a href="https://www.linkedin.com/in/atharvghadi-9a973834b" target="_blank" class="contact-link">
-            <span class="link-icon">🔗</span>
-            linkedin.com/in/atharvghadi-9a973834b
-            <span class="link-label">LINKEDIN</span>
+            <span class="link-icon">🔗</span>linkedin.com/in/atharvghadi-9a973834b<span class="link-label">LINKEDIN</span>
           </a>
           <a href="https://github.com/Atharv07-Luffy" target="_blank" class="contact-link">
-            <span class="link-icon">⚙️</span>
-            github.com/Atharv07-Luffy
-            <span class="link-label">GITHUB</span>
+            <span class="link-icon">⚙️</span>github.com/Atharv07-Luffy<span class="link-label">GITHUB</span>
+          </a>
+          <a href="https://tryhackme.com/p/LUFFY07" target="_blank" class="contact-link">
+            <span class="link-icon">🔐</span>tryhackme.com/p/LUFFY07<span class="link-label">TRYHACKME</span>
           </a>
           <a href="tel:8369481920" class="contact-link">
-            <span class="link-icon">📞</span>
-            +91 83694 81920
-            <span class="link-label">PHONE</span>
+            <span class="link-icon">📞</span>+91 83694 81920<span class="link-label">PHONE</span>
           </a>
         </div>
       </div>
     </section>
 
-  </div><!-- end .page -->
+  </div>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Atharv Ghadi &nbsp;·&nbsp; Built with HTML/CSS/JS &nbsp;·&nbsp; <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
-    <div class="footer-status">
-      <div class="status-dot"></div>
-      <p style="color: var(--dim);">system online</p>
-    </div>
+    <div class="footer-status"><div class="status-dot"></div><p style="color: var(--dim);">system online</p></div>
   </footer>
 
   <script>
-    // ── CUSTOM CURSOR ──
     const cursor = document.getElementById('cursor');
     const dot = document.getElementById('cursorDot');
     let mx = 0, my = 0, cx = 0, cy = 0;
@@ -674,36 +361,19 @@
     function animCursor() { cx += (mx - cx) * 0.12; cy += (my - cy) * 0.12; cursor.style.left = cx - 10 + 'px'; cursor.style.top = cy - 10 + 'px'; requestAnimationFrame(animCursor); }
     animCursor();
 
-    // ── MATRIX BACKGROUND ──
     const canvas = document.getElementById('matrix-bg');
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
     window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
     const cols = Math.floor(canvas.width / 20);
     const drops = Array(cols).fill(1);
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(2,12,2,0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#00ff41';
-      ctx.font = '14px Share Tech Mono';
-      drops.forEach((y, i) => {
-        const char = String.fromCharCode(0x30A0 + Math.random() * 96);
-        ctx.fillText(char, i * 20, y * 20);
-        if (y * 20 > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-      });
-    }
+    function drawMatrix() { ctx.fillStyle = 'rgba(2,12,2,0.05)'; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.fillStyle = '#00ff41'; ctx.font = '14px Share Tech Mono'; drops.forEach((y, i) => { const char = String.fromCharCode(0x30A0 + Math.random() * 96); ctx.fillText(char, i * 20, y * 20); if (y * 20 > canvas.height && Math.random() > 0.975) drops[i] = 0; drops[i]++; }); }
     setInterval(drawMatrix, 50);
 
-    // ── HERO TYPEWRITER ──
     const cmd = document.getElementById('typed-cmd');
     const text = 'whoami --verbose';
     let i = 0;
-    function type() {
-      if (i < text.length) { cmd.textContent += text[i++]; setTimeout(type, 80); }
-      else { showHeroLines(); }
-    }
+    function type() { if (i < text.length) { cmd.textContent += text[i++]; setTimeout(type, 80); } else { showHeroLines(); } }
     function showHeroLines() {
       setTimeout(() => { document.getElementById('hero-output-1').style.opacity = 1; }, 200);
       setTimeout(() => { document.getElementById('hero-output-2').style.opacity = 1; }, 600);
@@ -712,10 +382,7 @@
     }
     setTimeout(type, 600);
 
-    // ── SCROLL FADE IN ──
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
